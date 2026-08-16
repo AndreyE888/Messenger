@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Элементы решения/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="Messenger.Application/Messenger.Application.csproj" Id="47a86063-2dfc-4448-aec5-9ab489c129bd" />
+  <Project Path="Messenger.Client.Web/Messenger.Client.Web.csproj" />
+  <Project Path="Messenger.Domain/Messenger.Domain.csproj" Id="a9021b40-c30f-469b-b528-5d26fa9169f8" />
+  <Project Path="Messenger.Infrastructure/Messenger.Infrastructure.csproj" Id="0e81d960-d3a5-4ab8-ac47-dfc8bb4cc64b" />
+  <Project Path="Messenger.Server/Messenger.Server.csproj" />
+</Solution>
