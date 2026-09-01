@@ -5,6 +5,7 @@ using BCrypt.Net;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
+using Messenger.Server.Services;
 
 
 namespace Messenger.Server.Controllers
@@ -85,7 +86,16 @@ namespace Messenger.Server.Controllers
             {
                 return Unauthorized("Неверный Email или пароль!");
             }
-            var token = JwtProvider.
+            var token = JwtProvider.GenerateToken(existingUser);
+
+            return Ok(new
+            {
+                Message = "Вход успешно выполнен!",
+                UserId = existingUser.Id,
+                UserName = existingUser.UserName,
+                Token = token
+
+            });
               
     }
 }

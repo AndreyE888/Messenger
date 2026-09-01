@@ -429,8 +429,7 @@ FodyWeavers.xsd
 *.msp
 
 # Мои секреты и локальные настройки
-**/appsettings.Development.json
-**/appsettings.Production.json
+**/appsettings.*.json
 *.secret
 *.key
 .env
