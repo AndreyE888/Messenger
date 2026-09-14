@@ -28,5 +28,14 @@ namespace Messenger.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<Message>> GetMessagesByChatIdAsync(int chatId)
+        {
+            return await _context.Messages
+                .Where(m => m.ChatId == chatId)
+                .Include(m => m.User)
+                .OrderByDescending(m => m.SentAt)
+                .ToListAsync();
+        }
+
     }
 }

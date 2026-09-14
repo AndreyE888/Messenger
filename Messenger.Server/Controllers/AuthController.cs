@@ -62,7 +62,7 @@ namespace Messenger.Server.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
-            if (loginRequest ==null || loginRequest.Email  == null || loginRequest.Password == null)
+            if (loginRequest == null || loginRequest.Email == null || loginRequest.Password == null)
             {
                 return BadRequest("Ошибка! Не все поля заполнены!");
             }
@@ -81,7 +81,7 @@ namespace Messenger.Server.Controllers
                 return Unauthorized("Неверный Email или пароль!");
             }
             bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginRequest.Password, existingUser.PasswordHash);
-            
+
             if (!isPasswordValid)
             {
                 return Unauthorized("Неверный Email или пароль!");
@@ -96,7 +96,7 @@ namespace Messenger.Server.Controllers
                 Token = token
 
             });
-              
+
+        }
     }
 }
-    
