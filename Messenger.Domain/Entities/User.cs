@@ -7,11 +7,8 @@
         public string Email { get; set; } = string.Empty;
 
         public string PasswordHash { get; set; } = string.Empty;
-        public DateTime CreatedAt { get; set; }
-
-        public User()
-        {
-            CreatedAt = DateTime.UtcNow;
-        }
+        public ICollection<Chat> Chats { get; set; } = new List<Chat>();
+        public ICollection<ChatUser> ChatUsers { get; set; } = new List<ChatUser>(); 
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

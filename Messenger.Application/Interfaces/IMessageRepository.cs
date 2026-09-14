@@ -8,6 +8,8 @@ namespace Messenger.Application.Interfaces
         Task<Message?> GetMessageByIdAsync(int id);
         Task<IEnumerable<Message>> GetMessagesByUserIdAsync(int userid);
         Task AddAsync(Message message);
+        
+        Task<IEnumerable<Message>> GetMessagesByChatIdAsync(int chatId);
 
 
     }
